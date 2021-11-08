@@ -60,7 +60,7 @@ void MyTimer_PWM( TIM_TypeDef * Timer , char Channel ) {
 		Timer->CCMR2 |= TIM_CCMR2_OC4M_1| TIM_CCMR2_OC4M_2;
 		Timer->CCER |= TIM_CCER_CC4E;
 	}
-}	
+}
 
 void Set_PWM_Cycle (TIM_TypeDef * Timer, char Channel, char Rapp_Cycle) {
 	if (Channel == 1) {
@@ -75,6 +75,7 @@ void Set_PWM_Cycle (TIM_TypeDef * Timer, char Channel, char Rapp_Cycle) {
 	else if (Channel == 4) {
 		Timer->CCR4 = (int) (Timer->ARR)*Rapp_Cycle/100;
 	}
+	Timer->CR1 |= TIM_CR1_ARPE; 
 }
 
 void TIM1_IRQHandler ( void )
