@@ -126,6 +126,7 @@ void Init_Codeur (TIM_TypeDef * Timer)
 		Timer->CR1 |= 0x01;					//Initialisation du registre CR1
 		
 		Timer->ARR = 0x59F;					//On place la valeur max à 1439 (360*4 -1)
+		Timer->PSC=0x0;
 	}
 	
 	
