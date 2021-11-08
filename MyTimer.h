@@ -5,7 +5,7 @@
 typedef struct
 {
 
-TIM_TypeDef * Timer ; // TIM1 à TIM4
+TIM_TypeDef * Timer ; // TIM1 Ã  TIM4
 unsigned short ARR ;
 unsigned short PSC ;
 } MyTimer_Struct_TypeDef ;
@@ -13,9 +13,9 @@ unsigned short PSC ;
 /*
 *****************************************************************************************
 * @brie f
-* @param -> Paramè t r e sous forme d ’ une s t r u c t u r e ( son a d re s se ) con ten an t l e s
+* @param -> ParamÃ¨ t r e sous forme d â€™ une s t r u c t u r e ( son a d re s se ) con ten an t l e s
 i n f o rm a ti o n s de base
-* @Note -> F onc ti on à l a n c e r s y s t ématiquement avan t d ’ a l l e r pl u s en dé t a i l dans l e s
+* @Note -> F onc ti on Ã  l a n c e r s y s t Ã©matiquement avan t d â€™ a l l e r pl u s en dÃ© t a i l dans l e s
 con f pl u s f i n e s (PWM, codeur i n c . . . )
 *************************************************************************************************
 */
@@ -27,14 +27,14 @@ void MyTimer_Base_Init( MyTimer_Struct_TypeDef * Timer );
 * @brief
 * @param : - TIM_TypeDef * Timer : Timer concerne
            - char Channel : de 1 a 4
-* @Note : Active le channel spécifié sur le timer spécifié
-* la gestion de la configuration I/O n’est pas faite dans cette fonction
-* ni le réglage de la période de la PWM (ARR, PSC)
+* @Note : Active le channel spÃ©cifiÃ© sur le timer spÃ©cifiÃ©
+* la gestion de la configuration I/O nâ€™est pas faite dans cette fonction
+* ni le rÃ©glage de la pÃ©riode de la PWM (ARR, PSC)
 **************************************************************************************************
 */
 void MyTimer_PWM( TIM_TypeDef * Timer , char Channel ) ;
 void Set_PWM_Cycle (TIM_TypeDef * Timer, char Channel, char Rapp_Cycle);
-	
+void Init_Codeur (TIM_TypeDef * Timer);	
 
 #define MyTimer_Base_Start(Timer)( Timer-> CR1 |= TIM_CR1_CEN)
 #define MyTimer_Base_Stop(Timer)( Timer-> CR1 &= TIM_CR1_CEN )
