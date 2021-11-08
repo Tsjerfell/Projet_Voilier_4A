@@ -1,1 +1,1 @@
-TIM3 CH3 et CH4 pour la girouette
+PA0 et PA1 Girouette (TIM2 CH1 et CH2)
