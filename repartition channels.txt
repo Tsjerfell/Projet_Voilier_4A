@@ -1,2 +1,3 @@
 PA0 et PA1 Girouette (TIM2 CH1 et CH2)
 PA6 et PC6 Plateau (TIM3 CH1) 
+PB6 servo-moteur (TIM4 CH1)
