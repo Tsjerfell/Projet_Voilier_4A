@@ -6,14 +6,16 @@ Contient les fichier .h
 ### MyDrivers/src
 Contient les fichiers .c
 ### sources/...
-#### Test_Girouette
+#### Test_Girouette.c
 Utilise Timer.h et MyGPIO.h
 
 Fonctionnement: On mesure l'angle de la girouette en continue
 
-#### TestPWM
-utilise Timer.h et MyGPIO.h
+#### TestPWM.c
+Utilise MyTimer.h et Driver_GPIO.h
 
+#### ConvertAngle.c
+Utilise MyTimer.h et Driver_GPIO.h
 ##### Fait par
  - Paul Duffaut
  - Salma Farhat
