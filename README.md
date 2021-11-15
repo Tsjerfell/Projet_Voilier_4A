@@ -8,6 +8,7 @@ Include les fichiers .c
 ### sources/...
 #### Test_Girouette
 Utilise Timer.h et MyGPIO.h
+
 Fonctionnement: On mesure l'angle de la girouette en continue
 
 #### TestPWM
