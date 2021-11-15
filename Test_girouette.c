@@ -10,19 +10,19 @@ int main(void) {
 	MyGPIO_Struct_TypeDef GPIO;
 	MyGPIO_Struct_TypeDef GPIO2;
 	MyTimer_Struct_TypeDef Timer1_Test;
-	Timer1_Test.Timer = TIM3;
+	Timer1_Test.Timer = TIM2;
 
 	MyTimer_Base_Init ( &Timer1_Test );
 	
 	
-	GPIO.GPIO=GPIOC;
-	GPIO.GPIO_Pin=7;
-	GPIO.GPIO_Conf=Out_Ppull;
+	GPIO.GPIO=GPIOA;
+	GPIO.GPIO_Pin=0;
+	GPIO.GPIO_Conf=In_PullDown;
 	MyGPIO_Init(&GPIO);
 	
-	GPIO2.GPIO=GPIOB;
-	GPIO2.GPIO_Pin=4;
-	GPIO2.GPIO_Conf=Out_Ppull;
+	GPIO2.GPIO=GPIOA;
+	GPIO2.GPIO_Pin=1;
+	GPIO2.GPIO_Conf=In_PullDown;
 	MyGPIO_Init(&GPIO2);
 	
 
