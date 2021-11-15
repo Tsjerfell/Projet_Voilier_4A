@@ -15,10 +15,10 @@ Fonctionnement: On mesure l'angle de la girouette en continue
 utilise Timer.h et MyGPIO.h
 
 ##### Fait par
-Paul Duffaut
-Salma Farhat
-Sarra Kouki
-Félix Murat
-Erik Semb Omre
+ - Paul Duffaut
+ - Salma Farhat
+ - Sarra Kouki
+ - Félix Murat
+ - Erik Semb Omre
 
 
