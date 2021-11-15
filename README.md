@@ -12,10 +12,14 @@ Utilise Timer.h et MyGPIO.h
 Fonctionnement: On mesure l'angle de la girouette en continue
 
 #### TestPWM.c
-Utilise MyTimer.h et Driver_GPIO.h
+Utilise 
+ - MyTimer.h et Driver_GPIO.h
+ - Tim2
+ - GPIOA 1 en output pushpull
 
 #### ConvertAngle.c
-Utilise MyTimer.h et Driver_GPIO.h
+Utilise 
+ - MyTimer.h et Driver_GPIO.h
 ##### Fait par
  - Paul Duffaut
  - Salma Farhat
