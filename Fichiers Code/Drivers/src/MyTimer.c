@@ -1,20 +1,17 @@
 #include "MyTimer.h"
 #include "stm32f10x.h"
 
-void (* Ptrf1 ) ( void ); //Déclaration d'un pointeur de fonction 
-void (* Ptrf2 ) ( void ); 
-void (* Ptrf3 ) ( void ); 
-void (* Ptrf4 ) ( void ); 
+static void (* Ptrf1 ) ( void ); //Déclaration d'un pointeur de fonction 
+static void (* Ptrf2 ) ( void ); 
+static void (* Ptrf3 ) ( void ); 
+static void (* Ptrf4 ) ( void ); 
 
-void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer, int ARR, int PSC) {
+void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer) {
 	
 	if (Timer->Timer == TIM1) RCC->APB2ENR |= RCC_APB2ENR_TIM1EN ; // Activation de l'horloge locale du périphérique
 	if (Timer->Timer == TIM2) RCC->APB1ENR |= RCC_APB1ENR_TIM2EN ;
 	if (Timer->Timer == TIM3) RCC->APB1ENR |= RCC_APB1ENR_TIM3EN ;
 	if (Timer->Timer == TIM4) RCC->APB1ENR |= RCC_APB1ENR_TIM4EN ;
-	
-	Timer->Timer->PSC = PSC; // Réglage de la période du Timer
-	Timer->Timer->ARR = ARR; 
 	
 	Timer->Timer->CR1 |=  (1 << 0); // Activation du compteur
 }
@@ -42,7 +39,7 @@ void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio, void (* IT_Function )(v
 void MyTimer_PWM( TIM_TypeDef * Timer , char Channel ) {
 	if (Channel == 1) {
 		Timer->CCMR1 &= ~TIM_CCMR1_OC1M_0;                   
-		Timer->CCMR1 |= TIM_CCMR1_OC1M_1| TIM_CCMR1_OC1M_2; //configuration du canal en mode PWM ;Affectation de la valeur ob110 au bit OC1M du registre CCMR1 du timer
+		Timer->CCMR1 |= TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1M_2; //configuration du canal en mode PWM ;Affectation de la valeur ob110 au bit OC1M du registre CCMR1 du timer
 		Timer->CCER |= TIM_CCER_CC1E;       //lancer le timer                
 	}
 	else if (Channel == 2) {

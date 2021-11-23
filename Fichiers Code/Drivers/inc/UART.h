@@ -2,10 +2,13 @@
 #define UART_H
 #include "stm32f10x.h"
 
+typedef enum { 
+	RX,TX
+} Mode_TypeDef; 
 
 
 //Active l'horloge de l'USART et configure le pin associé 
-void UART_Init(USART_TypeDef * UARTptr, int UART_BaudRate );
+void UART_Init(USART_TypeDef * UARTptr, Mode_TypeDef Mode, int UART_BaudRate );
 
 //Démarre l'USART
 void UART_ActiveIT(USART_TypeDef * UARTptr , char Prio, void (* IT_Function )(void));
@@ -13,5 +16,7 @@ void UART_ActiveIT(USART_TypeDef * UARTptr , char Prio, void (* IT_Function )(vo
 //Envoie le message donné par l'USART  
 void UART_send(USART_TypeDef * UARTptr, char * data); 
 
+char UART_receive (	USART_TypeDef * UARTptr); 
 
 #endif 
+

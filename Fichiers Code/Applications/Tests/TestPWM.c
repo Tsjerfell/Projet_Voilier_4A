@@ -36,7 +36,7 @@ int main(void)
 	TIM.PSC = 4000-1;
 
 
-	MyTimer_Base_Init(&TIM,TIM.ARR,TIM.PSC);
+	MyTimer_Base_Init(&TIM);
 	MyTimer_Base_Start(TIM.Timer);
 
 	//GPIO
@@ -48,7 +48,7 @@ int main(void)
 
 	//PWM
 	MyTimer_PWM(TIM.Timer, 2);
-	Set_PWM_Cycle(TIM.Timer,2,10);
+	Set_PWM_Cycle(TIM.Timer,2,80);
 	
 	
 	//MyTimer_ActiveIT(TIM2, 1, CallBack); 

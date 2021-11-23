@@ -1,8 +1,8 @@
 #include "UART.h"
 #include "Driver_GPIO.h"
 #include "stm32f10x.h"
-void (* Ptrf1) (void); 
-void (* Ptrf2) (void); 
+static void (* Ptrf1) (void); 
+static void (* Ptrf2) (void); 
 
 void UART_Init ( USART_TypeDef * UARTptr,Mode_TypeDef Mode, int UART_BaudRate ) {
 
@@ -68,6 +68,8 @@ void UART_send_string(USART_TypeDef * UARTptr, char * data){
 char UART_receive (	USART_TypeDef * UARTptr) { 
 	return (char) UARTptr->DR; 
 }
+
+
 
 
 

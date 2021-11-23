@@ -20,7 +20,7 @@ con f pl u s f i n e s (PWM, codeur i n c . . . )
 *************************************************************************************************
 */
 void MyTimer_ActiveIT( TIM_TypeDef * Timer , char Prio, void (* IT_Function )(void));
-void MyTimer_Base_Init( MyTimer_Struct_TypeDef * Timer, int ARR, int PSC );
+void MyTimer_Base_Init( MyTimer_Struct_TypeDef * Timer);
 
 /*
 **************************************************************************************************

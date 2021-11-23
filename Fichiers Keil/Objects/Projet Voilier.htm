@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Projet Voilier.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Projet Voilier.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Nov 18 13:25:09 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Nov 23 10:52:04 2021
 <BR><P>
 <H3>Maximum Stack Usage =         28 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -79,8 +79,8 @@ Function Pointers
  <LI><a href="#[29]">TIM2_IRQHandler</a> from mytimer.o(i.TIM2_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[2a]">TIM3_IRQHandler</a> from mytimer.o(i.TIM3_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[2b]">TIM4_IRQHandler</a> from mytimer.o(i.TIM4_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
- <LI><a href="#[32]">USART1_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
- <LI><a href="#[33]">USART2_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
+ <LI><a href="#[32]">USART1_IRQHandler</a> from uart.o(i.USART1_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
+ <LI><a href="#[33]">USART2_IRQHandler</a> from uart.o(i.USART2_IRQHandler) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[34]">USART3_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[37]">USBWakeUp_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[20]">USB_HP_CAN1_TX_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
@@ -396,12 +396,6 @@ Global Symbols
 <P><STRONG><a name="[26]"></a>TIM1_UP_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[32]"></a>USART1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md.o(.text))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
-</UL>
-<P><STRONG><a name="[33]"></a>USART2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md.o(.text))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
-</UL>
 <P><STRONG><a name="[34]"></a>USART3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
@@ -468,10 +462,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[50]"></a>MyTimer_Base_Init</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, mytimer.o(i.MyTimer_Base_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = MyTimer_Base_Init
-</UL>
-<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[50]"></a>MyTimer_Base_Init</STRONG> (Thumb, 94 bytes, Stack size 0 bytes, mytimer.o(i.MyTimer_Base_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[52]"></a>MyTimer_PWM</STRONG> (Thumb, 120 bytes, Stack size 0 bytes, mytimer.o(i.MyTimer_PWM))
@@ -506,7 +498,17 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, testpwm.o(i.main))
+<P><STRONG><a name="[32]"></a>USART1_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, uart.o(i.USART1_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USART1_IRQHandler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
+</UL>
+<P><STRONG><a name="[33]"></a>USART2_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, uart.o(i.USART2_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USART2_IRQHandler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
+</UL>
+<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, testpwm.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = main &rArr; Set_PWM_Cycle
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_PWM_Cycle
