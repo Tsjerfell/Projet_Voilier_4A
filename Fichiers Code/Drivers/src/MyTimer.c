@@ -14,6 +14,9 @@ void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer) {
 	if (Timer->Timer == TIM4) RCC->APB1ENR |= RCC_APB1ENR_TIM4EN ;
 	
 	Timer->Timer->CR1 |=  (1 << 0); // Activation du compteur
+	
+	Timer->Timer->ARR=Timer->ARR;
+	Timer->Timer->PSC=Timer->PSC;
 }
 
 
